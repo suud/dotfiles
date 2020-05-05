@@ -5,13 +5,15 @@ Simple, yet powerful collection of vim, tmux, and zsh configurations.
 ```
 # make sure you work on the latest image version
 docker pull suud/dev 
-# use one of the following commands to run the container
+### use one of the following commands to run the container ###
+## temporary containers ##
 docker run -it --rm suud/dotfiles
 docker run -v "$(pwd)":/app -it --rm suud/dotfiles # dev
 docker run -v "$(pwd)":/app:ro -it --rm suud/dotfiles # dev-ro
+# WARNING! This mounts your ssh keys into the container! #
 docker run -v "$(pwd)":/app -v ~/.ssh:/root/.ssh:ro -it --rm suud/dotfiles # dev!
-docker run -v "$(pwd)":/app:ro -v ~/.ssh:/root/.ssh:ro -it --rm suud/dotfiles # dev-ro!
-docker run -v "$(pwd)":/app -v ~/.ssh:/root/.ssh:ro -it suud/dotfiles # dev-persistent!
+# persistent container #
+docker run -v "$(pwd)":/app -v ~/.ssh:/root/.ssh:ro --name <custom-name> --hostname <custom-name> -it suud/dotfiles
 ```
 
 

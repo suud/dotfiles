@@ -43,7 +43,8 @@ RUN chsh -s $(which zsh)
 COPY . /root/.dotfiles
 
 WORKDIR /root/.dotfiles
-#RUN ./install
+# TODO
 
-
+# set start dir and shell
 WORKDIR /app
+ENTRYPOINT ["zsh"]
