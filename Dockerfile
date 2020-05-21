@@ -44,6 +44,8 @@ RUN chsh -s $(which zsh)
 COPY . /root/.dotfiles
 
 WORKDIR /root/.dotfiles
+ENV PATH /root/.dotfiles/bin:$PATH
+RUN install-dotfiles --unattended
 # TODO
 
 # Reset to default

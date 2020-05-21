@@ -30,5 +30,7 @@ docker build -t dotfiles:<custom-tag> .
 docker run -it dotfiles:<custom-tag>
 ```
 
+
 ## Standing on the shoulders of ...
 - [Talk: How to Do 90% of What Plugins Do (With Just Vim)](https://youtu.be/XA2WjJbmmoM)
+- [Repo: holman/dotfiles](https://github.com/holman/dotfiles)
