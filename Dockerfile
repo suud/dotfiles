@@ -4,6 +4,7 @@ LABEL maintainer="Timo Sutterer <hi@timo-sutterer.de>"
 
 # Better terminal support
 ENV TERM screen-256color
+# Do not ask any questions and assume defaults
 ENV DEBIAN_FRONTEND noninteractive
 
 # BASIC SYSTEM SETUP
@@ -44,6 +45,9 @@ COPY . /root/.dotfiles
 
 WORKDIR /root/.dotfiles
 # TODO
+
+# Reset to default
+ENV DEBIAN_FRONTEND dialog
 
 # set start dir and shell
 WORKDIR /app
