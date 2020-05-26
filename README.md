@@ -16,6 +16,12 @@ docker run -v "$(pwd)":/app -v ~/.ssh:/root/.ssh:ro -it --rm suud/dotfiles # dev
 docker run -v "$(pwd)":/app -v ~/.ssh:/root/.ssh:ro --name <custom-name> --hostname <custom-name> -it suud/dotfiles
 ```
 
+## Custom setup
+
+These commands facilitate setting up your environment:
+
+- `setup-git`: Setup your git configuration (Author Name and E-Mail)
+
 
 ## Custom base image
 You can use `docker image ls` to check if you already have an image with the

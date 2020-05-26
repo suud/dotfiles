@@ -1,3 +1,7 @@
+# local user config
+git/gitconfig.local.symlink
+
+
 ## VIM
 # Swap
 [._]*.s[a-v][a-z]
