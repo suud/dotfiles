@@ -33,6 +33,7 @@ RUN \
     vim \
     git \
     zsh \
+    tmux \
     neovim \
     python3-neovim
 
