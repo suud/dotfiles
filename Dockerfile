@@ -37,17 +37,21 @@ RUN \
     neovim \
     python3-neovim
 
+# install oh-my-zsh
+RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+RUN rm /root/.zshrc
+# install powerlevel10k theme
+RUN git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
 
-# change default shell
+# set default shell to zsh
 RUN chsh -s $(which zsh)
 
 # DOTFILES SETUP
 COPY . /root/.dotfiles
-
+# install dotfiles
 WORKDIR /root/.dotfiles
 ENV PATH /root/.dotfiles/bin:$PATH
 RUN install-dotfiles --unattended
-# TODO
 
 # Reset to default
 ENV DEBIAN_FRONTEND dialog

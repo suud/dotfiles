@@ -10,9 +10,9 @@ docker pull suud/dev
 docker run -it --rm suud/dotfiles
 docker run -v "$(pwd)":/app -it --rm suud/dotfiles # dev
 docker run -v "$(pwd)":/app:ro -it --rm suud/dotfiles # dev-ro
-# WARNING! This mounts your ssh keys into the container! #
+# WARNING! The following command mounts your ssh keys into the container!
 docker run -v "$(pwd)":/app -v ~/.ssh:/root/.ssh:ro -it --rm suud/dotfiles # dev!
-# persistent container #
+## persistent container ##
 docker run -v "$(pwd)":/app -v ~/.ssh:/root/.ssh:ro --name <custom-name> --hostname <custom-name> -it suud/dotfiles
 ```
 
@@ -54,6 +54,9 @@ There's a few special files in the hierarchy.
   your `$HOME`. This is so you can keep all of those versioned in your dotfiles
   but still keep those autoloaded files in your home directory. These get
   symlinked in when you run `script/bootstrap`.
+
+## Known Issues
+- **There are weird characters on my screen**: Try to install [Meslo Nerd Font](https://github.com/romkatv/powerlevel10k#fonts) or run `p10k configure`
 
 ## Standing on the shoulders of ...
 - [Talk: How to Do 90% of What Plugins Do (With Just Vim)](https://youtu.be/XA2WjJbmmoM)
