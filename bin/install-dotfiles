@@ -118,6 +118,11 @@ link_dotfiles () {
     dst="$HOME/.$(basename "${src%.*}")"
     link_file "$src" "$dst"
   done
+
+
+  # link nvim configuration
+  mkdir -p "$HOME/.config/nvim"
+  link_file "$HOME/.nvimrc" "$HOME/.config/nvim/init.vim"
 }
 
 install_dotfiles () {
