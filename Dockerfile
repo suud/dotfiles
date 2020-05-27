@@ -3,7 +3,7 @@ FROM debian:buster
 LABEL maintainer="Timo Sutterer <hi@timo-sutterer.de>"
 
 # Better terminal support
-ENV TERM screen-256color
+ENV TERM xterm-256color
 # Do not ask any questions and assume defaults
 ENV DEBIAN_FRONTEND noninteractive
 

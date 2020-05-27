@@ -4,6 +4,9 @@
 syntax enable
 filetype plugin on
 
+" use true color
+set termguicolors
+
 
 " FINDING FILES:
 " - Hit tab to :find by partial match

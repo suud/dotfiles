@@ -56,6 +56,7 @@ There's a few special files in the hierarchy.
   symlinked in when you run `script/bootstrap`.
 
 ## Known Issues
+- **Something looks strange**: Install iterm2 if you're using macOS. I haven't tested these dotfiles in another terminal emulator.
 - **There are weird characters on my screen**: Install [Meslo Nerd Font](https://github.com/romkatv/powerlevel10k#fonts) (optional) and run `p10k configure` to fix the zsh theme configuration.
 
 ## Standing on the shoulders of ...
