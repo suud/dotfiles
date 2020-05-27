@@ -56,7 +56,7 @@ There's a few special files in the hierarchy.
   symlinked in when you run `script/bootstrap`.
 
 ## Known Issues
-- **There are weird characters on my screen**: Try to install [Meslo Nerd Font](https://github.com/romkatv/powerlevel10k#fonts) or run `p10k configure`
+- **There are weird characters on my screen**: Install [Meslo Nerd Font](https://github.com/romkatv/powerlevel10k#fonts) (optional) and run `p10k configure` to fix the zsh theme configuration.
 
 ## Standing on the shoulders of ...
 - [Talk: How to Do 90% of What Plugins Do (With Just Vim)](https://youtu.be/XA2WjJbmmoM)
