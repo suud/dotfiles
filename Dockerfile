@@ -2,9 +2,9 @@ FROM debian:buster
 
 LABEL maintainer="Timo Sutterer <hi@timo-sutterer.de>"
 
-# Better terminal support
+# better terminal support
 ENV TERM xterm-256color
-# Do not ask any questions and assume defaults
+# do not ask any questions and assume defaults
 ENV DEBIAN_FRONTEND noninteractive
 
 # BASIC SYSTEM SETUP
@@ -23,11 +23,14 @@ ENV LANG en_US.utf8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
-# update and install additional packages
+# install basic packages
 RUN \
   apt-get update && \
   apt-get install -qq \
     software-properties-common \
+    apt-transport-https \
+    ca-certificates \
+    gnupg-agent \
     curl \
     htop \
     vim \
@@ -36,6 +39,17 @@ RUN \
     tmux \
     neovim \
     python3-neovim
+
+# install docker cli and docker-compose
+RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
+RUN add-apt-repository \
+    "deb [arch=amd64] https://download.docker.com/linux/debian \
+    $(lsb_release -cs) \
+    stable"
+RUN apt-get update && \
+    apt-get install -qq \
+      docker-ce-cli \
+      docker-compose
 
 # install oh-my-zsh
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -53,7 +67,7 @@ WORKDIR /root/.dotfiles
 ENV PATH /root/.dotfiles/bin:$PATH
 RUN install-dotfiles --unattended
 
-# Reset to default
+# reset to default
 ENV DEBIAN_FRONTEND dialog
 
 # set start dir and shell
