@@ -4,7 +4,7 @@ Simple, yet powerful collection of vim, tmux, and zsh configurations.
 ## Quickstart
 ```
 # make sure you work on the latest image version
-docker pull suud/dev 
+docker pull suud/dev
 ### use one of the following commands to run the container ###
 docker run -it --rm suud/dotfiles
 docker run -v /var/run/docker.sock:/var/run/docker.sock \
@@ -57,9 +57,11 @@ There's a few special files in the hierarchy.
   symlinked in when you run `script/bootstrap`.
 
 ## Known Issues
+- **I have to press ctrl-p twice to make it work**: [remap the docker binding for detaching](https://stackoverflow.com/questions/20828657/docker-change-ctrlp-to-something-else)
 - **Something looks strange**: Install iterm2 if you're using macOS. I haven't tested these dotfiles in another terminal emulator.
 - **There are weird characters on my screen**: Install [Meslo Nerd Font](https://github.com/romkatv/powerlevel10k#fonts) (optional) and run `p10k configure` to fix the zsh theme configuration.
 
 ## Standing on the shoulders of ...
 - [Talk: How to Do 90% of What Plugins Do (With Just Vim)](https://youtu.be/XA2WjJbmmoM)
 - [Repo: holman/dotfiles](https://github.com/holman/dotfiles)
+- [Article: Setting up vim as an IDE for Python](https://medium.com/@hanspinckaers/setting-up-vim-as-an-ide-for-python-773722142d1d)

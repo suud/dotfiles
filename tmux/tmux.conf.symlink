@@ -9,3 +9,6 @@ set -g base-index 1
 # true colors
 set -g default-terminal "screen-256color"
 set -ga terminal-overrides ",*256col*:Tc"
+
+# required for vim-gitgutter plugin
+set -g focus-events on

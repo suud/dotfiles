@@ -38,18 +38,19 @@ RUN \
     zsh \
     tmux \
     neovim \
-    python3-neovim
+    python3-neovim \
+    vim-python-jedi
 
 # install docker cli and docker-compose
 RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
 RUN add-apt-repository \
-    "deb [arch=amd64] https://download.docker.com/linux/debian \
-    $(lsb_release -cs) \
-    stable"
+        "deb [arch=amd64] https://download.docker.com/linux/debian \
+        $(lsb_release -cs) \
+        stable"
 RUN apt-get update && \
     apt-get install -qq \
-      docker-ce-cli \
-      docker-compose
+    docker-ce-cli \
+    docker-compose
 
 # install oh-my-zsh
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -60,12 +61,19 @@ RUN git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM
 # set default shell to zsh
 RUN chsh -s $(which zsh)
 
+# install vim-plug
+RUN curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 # DOTFILES SETUP
 COPY . /root/.dotfiles
 # install dotfiles
 WORKDIR /root/.dotfiles
 ENV PATH /root/.dotfiles/bin:$PATH
 RUN install-dotfiles --unattended
+
+# this directory is required for the nvim undo history
+RUN mkdir -p ~/.nvimundo
 
 # reset to default
 ENV DEBIAN_FRONTEND dialog

@@ -1,11 +1,148 @@
+" PLUGINS:
+" install with `:PlugInstall`
+
+call plug#begin()
+"" appearance
+Plug 'vim-airline/vim-airline' " status bar
+Plug 'vim-airline/vim-airline-themes'
+Plug 'luochen1990/rainbow' " rainbow-color parentheses
+Plug 'ntpeters/vim-better-whitespace' " highlight trailing whitespaces
+Plug 'airblade/vim-gitgutter' " show git changes to files on the left
+Plug 'rakr/vim-two-firewatch' " nice colorscheme
+"Plug 'nightsense/snow' " low contrast colorscheme
+"Plug 'jacoborus/tender.vim' " alternative colorscheme
+"" autocompletion
+Plug 'ncm2/ncm2' " async autocompletion engine
+Plug 'roxma/nvim-yarp' " required for ncm2
+Plug 'ncm2/ncm2-path' " filepath completion
+Plug 'ncm2/ncm2-bufword' " words in buffer completion
+Plug 'ncm2/ncm2-ultisnips' " snippet completion and parameter expansion
+Plug 'SirVer/ultisnips' " required for ncm2-ultisnips
+"" Python only
+Plug 'ncm2/ncm2-jedi', { 'for': 'python' } " awesome python autocompletion
+Plug 'davidhalter/jedi-vim', { 'for': 'python' } " required for ncm2-jedi
+Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python' } " pep8 indentation
+"" Clojure(Script) only
+"Plug 'guns/vim-clojure-static', { 'for': 'clojure' } " basic autocompletion
+"Plug 'clojure-vim/async-clj-highlight', { 'for': 'clojure' } " syntax highlight
+"Plug 'tpope/vim-salve', { 'for': 'clojure' } " dependency manager support
+"Plug 'tpope/vim-fireplace', { 'for': 'clojure' } " repl support
+call plug#end()
+
+
+" PLUGIN SETUP
+
+" path to your python
+let g:python3_host_prog = '/usr/bin/python3'
+
+"" vim-airline
+let g:airline#extensions#tabline#enabled = 1
+
+"" rainbow
+let g:rainbow_active = 1
+
+"" vim-gitgutter
+" show if fold contains changes
+set foldtext=gitgutter#fold#foldtext()
+" summary in the status line
+function! GitStatus()
+  let [a,m,r] = GitGutterGetHunkSummary()
+  return printf('+%d ~%d -%d', a, m, r)
+endfunction
+set statusline+=%{GitStatus()}
+
+"" vim-two-firewatch
+set background=dark " alternative: light
+let g:two_firewatch_italics=1
+let g:airline_theme='twofirewatch'
+colo two-firewatch
+
+"" ncm2
+autocmd BufEnter * call ncm2#enable_for_buffer()
+set completeopt=noinsert,menuone,noselect
+set shortmess+=c
+" CTRL-C doesn't trigger the InsertLeave autocmd. map to <ESC> instead.
+inoremap <c-c> <ESC>
+" When the <Enter> key is pressed while the popup menu is visible, it only
+" hides the menu. Use this mapping to close the menu and also start a new
+" line.
+inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
+" make it fast
+let ncm2#popup_delay = 5
+let ncm2#complete_length = [[1, 1]]
+" Use new fuzzy based matches
+let g:ncm2#matcher = 'substrfuzzy'
+
+"" ncm2-ultisnips
+" Press enter key to trigger snippet expansion
+" The parameters are the same as `:help feedkeys()`
+autocmd BufNewFile,BufRead * inoremap <silent> <buffer> <expr> <cr> ncm2_ultisnips#expand_or("\<CR>", 'n')
+" c-j c-k for moving in snippet
+let g:UltiSnipsExpandTrigger		= "<Plug>(ultisnips_expand)"
+let g:UltiSnipsJumpForwardTrigger	= "<c-j>"
+let g:UltiSnipsJumpBackwardTrigger	= "<c-k>"
+let g:UltiSnipsRemoveSelectModeMappings = 0
+
+"" jedi-vim
+" disable Jedi-vim autocompletion and enable call-signatures options
+" (NCM2 is used for autocompletion)
+let g:jedi#auto_initialization = 1
+let g:jedi#completions_enabled = 0
+let g:jedi#auto_vim_configuration = 0
+let g:jedi#smart_auto_mappings = 0
+let g:jedi#popup_on_dot = 0
+let g:jedi#completions_command = ""
+let g:jedi#show_call_signatures = "1"
+
+
 " BASIC SETUP:
 
-" enable syntax and plugins
-syntax enable
-filetype plugin on
+" tab = 4 spaces
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+" tab = 2 spaces in yaml files
+autocmd FileType yaml setlocal ts=2 sw=2 sts=2
+
+" Show whitespace characters
+set list
+set listchars=tab:▸\ ,eol:↳,trail:⋅
 
 " use true color
 set termguicolors
+
+" enable syntax highlight and filetype detection
+syntax enable
+filetype plugin on
+
+" always show current line number and relative distance of other lines
+set relativenumber
+
+" keep undo history after closing file
+set undofile
+" make sure this directory exists!!
+set undodir=~/.nvimundo/
+" maximum number of changes that can be undone
+set undolevels=10000
+" maximum number lines to save for undo on a buffer reload
+set undoreload=100000
+
+" show vertical line at column 80 and 100 onwards
+let &colorcolumn="80,".join(range(100,9999),",")
+
+" keep five lines between the cursor and the edge of the screen
+set scrolloff=5
+
+
+" FOLDING:
+" define indent-based folds when opening the file but also allow manual folds
+augroup vimrc
+  au BufReadPre * setlocal foldmethod=indent
+  au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
+augroup END
+" show folds in a column on the left
+set foldcolumn=2
 
 
 " FINDING FILES:
@@ -52,3 +189,17 @@ let g:netrw_altv=1          " open splits to the right
 let g:netrw_liststyle=3     " tree view
 let g:netrw_list_hide=netrw_gitignore#Hide()
 let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
+
+
+" CUSTOM MAPPINGS:
+
+" use space as leader key
+let mapleader = " "
+" easier file saving
+nmap <leader>w :w<cr>
+" easier file closing
+nmap <leader>q :lcl<cr>:qa<cr>
+" strip trailing whitespaces
+nmap <leader>ws :StripWhitespace<cr>
+" jump to buffer-number or last used buffer
+nnoremap <leader><leader> <c-^>
