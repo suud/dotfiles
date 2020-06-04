@@ -37,6 +37,8 @@ let g:python3_host_prog = '/usr/bin/python3'
 
 "" vim-airline
 let g:airline#extensions#tabline#enabled = 1
+" show buffer number
+let g:airline#extensions#tabline#buffer_nr_show = 1
 
 "" rainbow
 let g:rainbow_active = 1
@@ -66,7 +68,7 @@ inoremap <c-c> <ESC>
 " When the <Enter> key is pressed while the popup menu is visible, it only
 " hides the menu. Use this mapping to close the menu and also start a new
 " line.
-inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
+inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<CR>" : "\<CR>")
 " make it fast
 let ncm2#popup_delay = 5
 let ncm2#complete_length = [[1, 1]]
@@ -76,7 +78,7 @@ let g:ncm2#matcher = 'substrfuzzy'
 "" ncm2-ultisnips
 " Press enter key to trigger snippet expansion
 " The parameters are the same as `:help feedkeys()`
-autocmd BufNewFile,BufRead * inoremap <silent> <buffer> <expr> <cr> ncm2_ultisnips#expand_or("\<CR>", 'n')
+autocmd BufNewFile,BufRead * inoremap <silent> <buffer> <expr> <CR> ncm2_ultisnips#expand_or("\<CR>", 'n')
 " c-j c-k for moving in snippet
 let g:UltiSnipsExpandTrigger		= "<Plug>(ultisnips_expand)"
 let g:UltiSnipsJumpForwardTrigger	= "<c-j>"
@@ -116,8 +118,14 @@ set termguicolors
 syntax enable
 filetype plugin on
 
+" case sensitive if search contains uppercase
+set smartcase
+
 " always show current line number and relative distance of other lines
 set relativenumber
+
+" automatically hide modified buffers (without !)
+set hidden
 
 " keep undo history after closing file
 set undofile
@@ -195,11 +203,15 @@ let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 
 " use space as leader key
 let mapleader = " "
-" easier file saving
-nmap <leader>w :w<cr>
-" easier file closing
-nmap <leader>q :lcl<cr>:qa<cr>
 " strip trailing whitespaces
-nmap <leader>ws :StripWhitespace<cr>
+nmap <leader>ws :StripWhitespace<CR>
 " jump to buffer-number or last used buffer
 nnoremap <leader><leader> <c-^>
+" easier buffer navigation
+nnoremap <silent> [b :bprevious<CR>
+nnoremap <silent> ]b :bnext<CR>
+nnoremap <silent> [B :bfirst<CR>
+nnoremap <silent> ]B :blast<CR>
+" use ; to write : (;; for ;)
+map ; :
+noremap ;; ;
