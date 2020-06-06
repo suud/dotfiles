@@ -38,7 +38,7 @@ docker run -it dotfiles:<custom-tag>
 ```
 
 
-## Components (taken from [holman/dotfiles](https://github.com/holman/dotfiles))
+## Components (stolen from [holman/dotfiles](https://github.com/holman/dotfiles))
 
 There's a few special files in the hierarchy.
 
