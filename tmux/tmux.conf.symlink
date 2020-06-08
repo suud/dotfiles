@@ -10,5 +10,8 @@ set -g base-index 1
 set -g default-terminal "screen-256color"
 set -ga terminal-overrides ",*256col*:Tc"
 
+# needed to avoid delay when switching vim modes
+set -s escape-time 0
+
 # required for vim-gitgutter plugin
 set -g focus-events on
