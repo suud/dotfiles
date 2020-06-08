@@ -123,6 +123,7 @@ set smartcase
 
 " always show current line number and relative distance of other lines
 set relativenumber
+set nu rnu
 
 " automatically hide modified buffers (without !)
 set hidden
