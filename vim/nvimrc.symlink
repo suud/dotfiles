@@ -145,11 +145,7 @@ set scrolloff=5
 
 
 " FOLDING:
-" define indent-based folds when opening the file but also allow manual folds
-augroup vimrc
-  au BufReadPre * setlocal foldmethod=indent
-  au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
-augroup END
+set foldmethod=indent
 " show folds in a column on the left
 set foldcolumn=2
 
