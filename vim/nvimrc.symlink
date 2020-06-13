@@ -18,13 +18,15 @@ Plug 'ncm2/ncm2-path' " filepath completion
 Plug 'ncm2/ncm2-bufword' " words in buffer completion
 Plug 'ncm2/ncm2-ultisnips' " snippet completion and parameter expansion
 Plug 'SirVer/ultisnips' " required for ncm2-ultisnips
+Plug 'guns/vim-sexp' " s-expressions (auto-close parentheses)
+Plug 'tpope/vim-sexp-mappings-for-regular-people'
 "" Python only
 Plug 'ncm2/ncm2-jedi', { 'for': 'python' } " awesome python autocompletion
 Plug 'davidhalter/jedi-vim', { 'for': 'python' } " required for ncm2-jedi
 Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python' } " pep8 indentation
 "" Clojure(Script) only
-"Plug 'guns/vim-clojure-static', { 'for': 'clojure' } " basic autocompletion
-"Plug 'clojure-vim/async-clj-highlight', { 'for': 'clojure' } " syntax highlight
+Plug 'guns/vim-clojure-static', { 'for': 'clojure' } " basic autocompletion
+Plug 'clojure-vim/async-clj-highlight', { 'for': 'clojure' } " syntax highlight
 "Plug 'tpope/vim-salve', { 'for': 'clojure' } " dependency manager support
 "Plug 'tpope/vim-fireplace', { 'for': 'clojure' } " repl support
 call plug#end()
