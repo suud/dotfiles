@@ -5,7 +5,7 @@ call plug#begin()
 "" appearance
 Plug 'vim-airline/vim-airline' " status bar
 Plug 'vim-airline/vim-airline-themes'
-Plug 'luochen1990/rainbow' " rainbow-color parentheses
+Plug 'junegunn/rainbow_parentheses.vim' " rainbow-color parentheses
 Plug 'ntpeters/vim-better-whitespace' " highlight trailing whitespaces
 Plug 'airblade/vim-gitgutter' " show git changes to files on the left
 Plug 'rakr/vim-two-firewatch' " nice colorscheme
@@ -41,7 +41,8 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
 "" rainbow
-let g:rainbow_active = 1
+let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
+autocmd VimEnter * RainbowParentheses
 
 "" vim-gitgutter
 " show if fold contains changes
