@@ -82,6 +82,5 @@ RUN mkdir -p ~/.nvimundo
 # reset to default
 ENV DEBIAN_FRONTEND dialog
 
-# set start dir and shell
-WORKDIR /app
+# set shell
 ENTRYPOINT ["zsh"]
