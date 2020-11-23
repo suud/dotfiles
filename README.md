@@ -4,7 +4,7 @@ Simple, yet powerful collection of vim, tmux, and zsh configurations.
 ## Quickstart
 ```
 # make sure you work on the latest image version
-docker pull suud/dev
+docker pull suud/dotfiles
 ### use one of the following commands to run the container ###
 docker run -it --rm suud/dotfiles
 docker run -v /var/run/docker.sock:/var/run/docker.sock \
