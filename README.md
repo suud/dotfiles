@@ -8,12 +8,13 @@ docker pull suud/dev
 ### use one of the following commands to run the container ###
 docker run -it --rm suud/dotfiles
 docker run -v /var/run/docker.sock:/var/run/docker.sock \
-           -v "$(pwd)":/app \
+           -v "$(pwd)":"$(pwd)" \
+           -w "$(pwd)" \
            -it \
            --rm \
-#          -v ~/.ssh:/root/.ssh:ro \
-#          --name <custom-name> \
-#          --hostname <custom-name> \
+#           -v ~/.ssh:/root/.ssh:ro \
+#           --name <custom-name> \
+#           --hostname <custom-name> \
            suud/dotfiles
 ```
 
