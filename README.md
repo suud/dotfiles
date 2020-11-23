@@ -12,7 +12,7 @@ docker run -v /var/run/docker.sock:/var/run/docker.sock \
            -w "$(pwd)" \
            -e TZ=Europe/Amsterdam \
            -it \
-           --rm \
+#           --rm \
 #           -v ~/.ssh:/root/.ssh:ro \
 #           --name <custom-name> \
 #           --hostname <custom-name> \
