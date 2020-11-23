@@ -10,6 +10,7 @@ docker run -it --rm suud/dotfiles
 docker run -v /var/run/docker.sock:/var/run/docker.sock \
            -v "$(pwd)":"$(pwd)" \
            -w "$(pwd)" \
+           -e TZ=Europe/Amsterdam \
            -it \
            --rm \
 #           -v ~/.ssh:/root/.ssh:ro \
