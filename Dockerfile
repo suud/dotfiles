@@ -41,6 +41,12 @@ RUN \
     python3-neovim \
     vim-python-jedi
 
+# install node.js and npm
+RUN \
+  apt-get update && \
+  apt-get install -qq nodejs && \
+  curl -L https://www.npmjs.com/install.sh | sh
+
 # install docker cli and docker-compose
 RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
 RUN add-apt-repository \
