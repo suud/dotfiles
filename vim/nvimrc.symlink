@@ -15,6 +15,7 @@ Plug 'rakr/vim-two-firewatch' " nice colorscheme
 Plug 'ncm2/ncm2' " async autocompletion engine
 Plug 'roxma/nvim-yarp' " required for ncm2
 Plug 'ncm2/ncm2-path' " filepath completion
+Plug 'ncm2/ncm2-tmux' " word completions from other tmux panes
 Plug 'ncm2/ncm2-bufword' " words in buffer completion
 Plug 'ncm2/ncm2-ultisnips' " snippet completion and parameter expansion
 Plug 'SirVer/ultisnips' " required for ncm2-ultisnips
