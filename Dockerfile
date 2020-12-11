@@ -39,6 +39,7 @@ RUN \
     tmux \
     neovim \
     python3-neovim \
+    exuberant-ctags \
     vim-python-jedi
 
 # install node.js and npm

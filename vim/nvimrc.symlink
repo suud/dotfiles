@@ -20,6 +20,9 @@ Plug 'ncm2/ncm2-bufword' " words in buffer completion
 Plug 'ncm2/ncm2-ultisnips' " snippet completion and parameter expansion
 Plug 'SirVer/ultisnips' " required for ncm2-ultisnips
 "Plug 'ncm2/float-preview.nvim' " completion preview window (needs nvim >= 0.4)
+"" navigation
+Plug 'preservim/nerdtree'
+Plug 'preservim/tagbar'
 "" Python only
 Plug 'ncm2/ncm2-jedi', { 'for': 'python' } " awesome python autocompletion
 Plug 'davidhalter/jedi-vim', { 'for': 'python' } " required for ncm2-jedi
@@ -204,6 +207,10 @@ let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 let mapleader = " "
 " strip trailing whitespaces
 nmap <leader>ws :StripWhitespace<CR>
+" Tagbar
+nnoremap <leader>t :TagbarToggle<CR>
+" NERDTree
+nnoremap <leader>e :NERDTreeToggle<CR>
 " jump to buffer-number or last used buffer
 nnoremap <leader><leader> <c-^>
 " easier buffer navigation
