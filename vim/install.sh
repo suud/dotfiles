@@ -1,1 +1,1 @@
-nvim --headless +PlugInstall +qall > /dev/null
+nvim -u $HOME/.nvimplugins --headless +PlugInstall +qa

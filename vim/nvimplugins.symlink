@@ -1,0 +1,35 @@
+" PLUGINS:
+" install with `nvim -u $HOME/.nvimplugins --headless +PlugInstall +qa`
+
+call plug#begin()
+"" appearance
+Plug 'vim-airline/vim-airline' " status bar
+"Plug 'vim-airline/vim-airline-themes'
+Plug 'junegunn/rainbow_parentheses.vim' " rainbow-color parentheses
+Plug 'ntpeters/vim-better-whitespace' " highlight trailing whitespaces
+Plug 'airblade/vim-gitgutter' " show git changes to files on the left
+Plug 'rakr/vim-two-firewatch' " nice colorscheme
+"Plug 'nightsense/snow' " low contrast colorscheme
+"Plug 'jacoborus/tender.vim' " alternative colorscheme
+"" autocompletion
+Plug 'ncm2/ncm2' " async autocompletion engine
+Plug 'roxma/nvim-yarp' " required for ncm2
+Plug 'ncm2/ncm2-path' " filepath completion
+Plug 'ncm2/ncm2-tmux' " word completions from other tmux panes
+Plug 'ncm2/ncm2-bufword' " words in buffer completion
+Plug 'ncm2/ncm2-ultisnips' " snippet completion and parameter expansion
+Plug 'SirVer/ultisnips' " required for ncm2-ultisnips
+Plug 'ncm2/float-preview.nvim' " completion preview window
+"" navigation
+Plug 'preservim/nerdtree' " <leader>e
+Plug 'preservim/tagbar' " <leader>t
+"" Python only
+Plug 'ncm2/ncm2-jedi', { 'for': 'python' } " awesome python autocompletion
+Plug 'davidhalter/jedi-vim', { 'for': 'python' } " required for ncm2-jedi
+Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python' } " pep8 indentation
+Plug 'nvie/vim-flake8', { 'for': 'python' } " <leader>l for linting
+"" Clojure(Script) only
+Plug 'guns/vim-sexp', { 'for': 'clojure' } " s-expressions + close brackets
+Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure' }
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' } " repl support
+call plug#end()
