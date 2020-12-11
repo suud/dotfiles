@@ -39,8 +39,12 @@ RUN \
     tmux \
     neovim \
     python3-neovim \
+    python3-pip \
     exuberant-ctags \
     vim-python-jedi
+
+# install python packages
+RUN pip3 install flake8
 
 # install node.js and npm
 RUN \
