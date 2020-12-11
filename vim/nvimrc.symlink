@@ -21,8 +21,8 @@ Plug 'ncm2/ncm2-ultisnips' " snippet completion and parameter expansion
 Plug 'SirVer/ultisnips' " required for ncm2-ultisnips
 "Plug 'ncm2/float-preview.nvim' " completion preview window (needs nvim >= 0.4)
 "" navigation
-Plug 'preservim/nerdtree'
-Plug 'preservim/tagbar'
+Plug 'preservim/nerdtree' " <leader>e
+Plug 'preservim/tagbar' " <leader>t
 "" Python only
 Plug 'ncm2/ncm2-jedi', { 'for': 'python' } " awesome python autocompletion
 Plug 'davidhalter/jedi-vim', { 'for': 'python' } " required for ncm2-jedi
