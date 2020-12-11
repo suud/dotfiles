@@ -37,7 +37,6 @@ RUN \
     git \
     zsh \
     tmux \
-    neovim \
     python3-neovim \
     python3-pip \
     exuberant-ctags \
@@ -62,6 +61,17 @@ RUN apt-get update && \
     apt-get install -qq \
     docker-ce-cli \
     docker-compose
+
+# install neovim (newer version as through apt)
+WORKDIR /
+RUN \
+  curl -LO \
+  https://github.com/neovim/neovim/releases/latest/download/nvim.appimage && \
+  chmod u+x nvim.appimage && \
+  ./nvim.appimage --appimage-extract && \
+  rm nvim.appimage && \
+  rm /usr/bin/nvim && \
+  ln -s /squashfs-root/AppRun /usr/bin/nvim
 
 # install oh-my-zsh
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
