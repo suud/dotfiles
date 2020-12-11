@@ -1,5 +1,5 @@
 " Include Plugins file
-source /root/.nvimplugins
+source $HOME/.nvimplugins
 
 " PLUGIN SETUP
 
