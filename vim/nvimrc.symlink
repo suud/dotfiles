@@ -206,7 +206,7 @@ let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 " use space as leader key
 let mapleader = " "
 " strip trailing whitespaces
-nmap <leader>ws :StripWhitespace<CR>
+nmap <leader>w :StripWhitespace<CR>
 " Tagbar
 nnoremap <leader>t :TagbarToggle<CR>
 " NERDTree
