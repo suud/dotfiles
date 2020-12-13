@@ -42,9 +42,6 @@ RUN \
     exuberant-ctags \
     vim-python-jedi
 
-# install python packages
-RUN pip3 install flake8 black
-
 # install node.js and npm
 RUN \
   apt-get update && \
@@ -61,6 +58,19 @@ RUN apt-get update && \
     apt-get install -qq \
     docker-ce-cli \
     docker-compose
+
+# install python packages
+RUN pip3 install flake8 black
+
+# install clojure(script) linters
+RUN curl -sLO https://raw.githubusercontent.com/borkdude/clj-kondo/master/script/install-clj-kondo && \
+    chmod +x install-clj-kondo && \
+    ./install-clj-kondo && \
+    rm install-clj-kondo
+RUN cd /usr/local/bin && \
+    curl -sOL https://github.com/candid82/joker/releases/download/v0.15.7/joker-0.15.7-linux-amd64.zip && \
+    unzip joker-0.15.7-linux-amd64.zip && \
+    rm joker-0.15.7-linux-amd64.zip
 
 # install neovim (newer version as through apt)
 WORKDIR /
