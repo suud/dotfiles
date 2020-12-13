@@ -134,7 +134,7 @@ set scrolloff=5
 " FOLDING:
 set foldmethod=indent
 " show folds in a column on the left
-set foldcolumn=2
+"set foldcolumn=2
 
 
 " FINDING FILES:
