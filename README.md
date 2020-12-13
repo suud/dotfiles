@@ -61,7 +61,7 @@ There's a few special files in the hierarchy.
 ## Known Issues
 - **I have to press ctrl-p twice to make it work**: [remap the docker binding for detaching](https://stackoverflow.com/questions/20828657/docker-change-ctrlp-to-something-else)
 - **Things are ugly**: Make sure you are using iterm2 with the [Nord color preset](https://github.com/arcticicestudio/nord-iterm2#installation). I haven't tested these dotfiles in other environments.
-- **There are weird characters on my screen**: Install [Meslo Nerd Font](https://github.com/romkatv/powerlevel10k#fonts) (optional) and run `p10k configure` to fix the zsh theme configuration.
+- **There are weird characters on my screen**: Install [Meslo Nerd Font](https://github.com/romkatv/powerlevel10k#fonts) (or any [Nerd Font](https://github.com/ryanoasis/nerd-fonts#font-installation)), set as font in iterm2 and run `p10k configure` to update the zsh theme configuration.
 
 ## Standing on the shoulders of ...
 - [Talk: How to Do 90% of What Plugins Do (With Just Vim)](https://youtu.be/XA2WjJbmmoM)

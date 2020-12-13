@@ -2,14 +2,6 @@
 " install with `nvim -u $HOME/.nvimplugins --headless +PlugInstall +qa`
 
 call plug#begin()
-"" appearance
-Plug 'vim-airline/vim-airline' " status bar
-"Plug 'vim-airline/vim-airline-themes'
-Plug 'junegunn/rainbow_parentheses.vim' " rainbow-color parentheses
-Plug 'arcticicestudio/nord-vim'
-"Plug 'rakr/vim-two-firewatch' " nice colorscheme
-"Plug 'nightsense/snow' " low contrast colorscheme
-"Plug 'jacoborus/tender.vim' " alternative colorscheme
 "" autocompletion
 Plug 'ncm2/ncm2' " async autocompletion engine
 Plug 'roxma/nvim-yarp' " required for ncm2
@@ -35,4 +27,13 @@ Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python' } " pep8 indentation
 Plug 'guns/vim-sexp', { 'for': 'clojure' } " s-expressions + close brackets
 Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' } " repl support
+"" appearance
+Plug 'vim-airline/vim-airline' " status bar
+"Plug 'vim-airline/vim-airline-themes'
+Plug 'junegunn/rainbow_parentheses.vim' " rainbow-color parentheses
+Plug 'arcticicestudio/nord-vim'
+"Plug 'rakr/vim-two-firewatch' " nice colorscheme
+"Plug 'nightsense/snow' " low contrast colorscheme
+"Plug 'jacoborus/tender.vim' " alternative colorscheme
+Plug 'ryanoasis/vim-devicons' " nice icons - load as the very last one
 call plug#end()
