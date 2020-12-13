@@ -77,8 +77,11 @@ let g:ale_linters = {
 \}
 " fixers
 let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'python': ['black'],
 \}
+" fix files when saving
+let g:ale_fix_on_save = 1
 
 
 " BASIC SETUP:
@@ -184,8 +187,6 @@ let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 
 " use space as leader key
 let mapleader = " "
-" strip trailing whitespaces
-nmap <leader>w :StripWhitespace<CR>
 " Tagbar
 nnoremap <leader>t :TagbarToggle<CR>
 " NERDTree
