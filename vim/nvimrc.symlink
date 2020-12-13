@@ -10,6 +10,8 @@ let g:python3_host_prog = '/usr/bin/python3'
 let g:airline#extensions#tabline#enabled = 1
 " show buffer number
 let g:airline#extensions#tabline#buffer_nr_show = 1
+" ale integration
+let g:airline#extensions#ale#enabled = 1
 
 "" rainbow
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
@@ -67,6 +69,12 @@ let g:jedi#smart_auto_mappings = 0
 let g:jedi#popup_on_dot = 0
 let g:jedi#completions_command = ""
 let g:jedi#show_call_signatures = "1"
+
+"" ale
+" linters
+let g:ale_linters = {
+\   'python': ['flake8'],
+\}
 
 
 " BASIC SETUP:
@@ -178,8 +186,6 @@ nmap <leader>w :StripWhitespace<CR>
 nnoremap <leader>t :TagbarToggle<CR>
 " NERDTree
 nnoremap <leader>e :NERDTreeToggle<CR>
-" vim-flake8
-autocmd FileType python map <buffer> <leader>l :call flake8#Flake8()<CR>
 " jump to buffer-number or last used buffer
 nnoremap <leader><leader> <c-^>
 " easier buffer navigation
