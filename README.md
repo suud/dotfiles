@@ -60,7 +60,7 @@ There's a few special files in the hierarchy.
 
 ## Known Issues
 - **I have to press ctrl-p twice to make it work**: [remap the docker binding for detaching](https://stackoverflow.com/questions/20828657/docker-change-ctrlp-to-something-else)
-- **Something looks strange**: Install iterm2 if you're using macOS. I haven't tested these dotfiles in another terminal emulator.
+- **Things are ugly**: Make sure you are using iterm2 with the [Nord color preset](https://github.com/arcticicestudio/nord-iterm2#installation). I haven't tested these dotfiles in other environments.
 - **There are weird characters on my screen**: Install [Meslo Nerd Font](https://github.com/romkatv/powerlevel10k#fonts) (optional) and run `p10k configure` to fix the zsh theme configuration.
 
 ## Standing on the shoulders of ...

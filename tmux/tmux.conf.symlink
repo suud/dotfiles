@@ -15,3 +15,6 @@ set -s escape-time 0
 
 # required for vim-gitgutter plugin
 set -g focus-events on
+
+# tmux color theme
+run-shell "~/.tmux/themes/nord-tmux/nord.tmux"
