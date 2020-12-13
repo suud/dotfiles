@@ -6,7 +6,6 @@ call plug#begin()
 Plug 'vim-airline/vim-airline' " status bar
 "Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/rainbow_parentheses.vim' " rainbow-color parentheses
-Plug 'airblade/vim-gitgutter' " show git changes to files on the left
 Plug 'rakr/vim-two-firewatch' " nice colorscheme
 "Plug 'nightsense/snow' " low contrast colorscheme
 "Plug 'jacoborus/tender.vim' " alternative colorscheme
@@ -24,6 +23,9 @@ Plug 'preservim/nerdtree' " <leader>e
 Plug 'preservim/tagbar' " <leader>t
 "" linting
 Plug 'w0rp/ale'
+"" git
+Plug 'tpope/vim-fugitive' " git wrapper
+Plug 'airblade/vim-gitgutter' " show git changes to files on the left
 "" Python only
 Plug 'ncm2/ncm2-jedi', { 'for': 'python' } " awesome python autocompletion
 Plug 'davidhalter/jedi-vim', { 'for': 'python' } " required for ncm2-jedi
