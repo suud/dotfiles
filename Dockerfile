@@ -43,7 +43,7 @@ RUN \
     vim-python-jedi
 
 # install python packages
-RUN pip3 install flake8
+RUN pip3 install flake8 black
 
 # install node.js and npm
 RUN \
