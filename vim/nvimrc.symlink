@@ -27,11 +27,14 @@ function! GitStatus()
 endfunction
 set statusline+=%{GitStatus()}
 
+"" THEME
+"" nord
+colo nord
 "" vim-two-firewatch
-set background=dark " alternative: light
-let g:two_firewatch_italics=1
-let g:airline_theme='twofirewatch'
-colo two-firewatch
+"set background=dark " alternative: light
+"let g:two_firewatch_italics=1
+"let g:airline_theme='twofirewatch'
+"colo two-firewatch
 
 "" ncm2
 autocmd BufEnter * call ncm2#enable_for_buffer()
