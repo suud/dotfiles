@@ -78,6 +78,9 @@ RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2
     ./aws/install && \
     rm awscliv2.zip && rm -rf aws
 
+# install aws cdk
+RUN npm install -g aws-cdk
+
 # install neovim (newer version as through apt)
 WORKDIR /
 RUN \
