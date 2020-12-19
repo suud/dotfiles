@@ -39,6 +39,7 @@ RUN \
     tmux \
     python3-neovim \
     python3-pip \
+    python3-venv \
     exuberant-ctags \
     vim-python-jedi
 
