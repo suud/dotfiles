@@ -128,8 +128,8 @@ set undolevels=10000
 " maximum number lines to save for undo on a buffer reload
 set undoreload=100000
 
-" show vertical line at column 80 and 100 onwards
-let &colorcolumn="80,".join(range(100,9999),",")
+" show vertical line at column 80, 89 and 100 onwards
+let &colorcolumn="80,89,".join(range(100,9999),",")
 
 " keep five lines between the cursor and the edge of the screen
 set scrolloff=5
