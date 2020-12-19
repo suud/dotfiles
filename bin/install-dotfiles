@@ -119,6 +119,12 @@ link_dotfiles () {
     link_file "$src" "$dst"
   done
 
+  mkdir -p $HOME/.config
+  for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.config' -not -path '*.git*')
+  do
+    dst="$HOME/.config/(basename "${src%.*}")"
+    link_file "$src" "$dst"
+  done
 
   # link nvim configuration
   mkdir -p "$HOME/.config/nvim"
