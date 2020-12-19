@@ -60,7 +60,7 @@ RUN apt-get update && \
     docker-compose
 
 # install python packages
-RUN pip3 install flake8 black
+RUN pip3 install flake8 pylint black
 
 # install clojure(script) linters
 RUN curl -sLO https://raw.githubusercontent.com/borkdude/clj-kondo/master/script/install-clj-kondo && \
