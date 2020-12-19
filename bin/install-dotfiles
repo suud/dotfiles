@@ -122,7 +122,7 @@ link_dotfiles () {
   mkdir -p $HOME/.config
   for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.config' -not -path '*.git*')
   do
-    dst="$HOME/.config/(basename "${src%.*}")"
+    dst="$HOME/.config/$(basename "${src%.*}")"
     link_file "$src" "$dst"
   done
 
