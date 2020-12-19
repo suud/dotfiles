@@ -57,7 +57,7 @@ There's a few special files in the hierarchy.
   `.sh`, not `.zsh`.
 - **topic/\*.symlink**: Any file ending in `*.symlink` gets symlinked into
   your `$HOME`. A `.` will be prepended (`test.symlink` will be symlinked from
-  `$HOME/.test`. This is so you can keep all of those versioned in your
+  `$HOME/.test`). This is so you can keep all of those versioned in your
   dotfiles but still keep those autoloaded files in your home directory.
 - **topic/\*.config**: Any file ending in `*.config` gets symlinked into
   your `$HOME/.config`.
