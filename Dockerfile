@@ -32,6 +32,7 @@ RUN \
     ca-certificates \
     gnupg-agent \
     curl \
+    less \
     htop \
     vim \
     git \
