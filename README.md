@@ -73,4 +73,4 @@ There's a few special files in the hierarchy.
 - [Talk: How to Do 90% of What Plugins Do (With Just Vim)](https://youtu.be/XA2WjJbmmoM)
 - [Repo: holman/dotfiles](https://github.com/holman/dotfiles)
 - [Article: Setting up vim as an IDE for Python](https://medium.com/@hanspinckaers/setting-up-vim-as-an-ide-for-python-773722142d1d)
-- TODO: [Article: Getting started with Clojure, Neovim and Conjure](https://oli.me.uk/getting-started-with-clojure-neovim-and-conjure-in-minutes/)
+- [Article: Getting started with Clojure, Neovim and Conjure](https://oli.me.uk/getting-started-with-clojure-neovim-and-conjure-in-minutes/)

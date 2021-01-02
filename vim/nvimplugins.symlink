@@ -26,7 +26,7 @@ Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python' } " pep8 indentation
 "" Clojure(Script) only
 Plug 'guns/vim-sexp', { 'for': 'clojure' } " s-expressions + close brackets
 Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure' }
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' } " repl support
+Plug 'Olical/conjure', { 'for': 'clojure' } " interactive code evaluation
 "" appearance
 Plug 'vim-airline/vim-airline' " status bar
 "Plug 'vim-airline/vim-airline-themes'
