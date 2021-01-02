@@ -16,6 +16,8 @@ docker run -v /var/run/docker.sock:/var/run/docker.sock \
 #           -v ~/.ssh:/root/.ssh:ro \
 #           --name <custom-name> \
 #           --hostname <custom-name> \
+#           -p 127.0.0.1:80:8080 \
+#           -p 127.0.0.1:9630:9630 \
            suud/dotfiles
 ```
 

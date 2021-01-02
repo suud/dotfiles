@@ -1,4 +1,4 @@
-FROM debian:buster
+FROM clojure:openjdk-15-buster
 
 LABEL maintainer="Timo Sutterer <hi@timo-sutterer.de>"
 
@@ -62,6 +62,9 @@ RUN apt-get update && \
 
 # install python packages
 RUN pip3 install flake8 pylint black
+
+# install shadow-cljs
+RUN npm install -g shadow-cljs
 
 # install clojure(script) linters
 RUN curl -sLO https://raw.githubusercontent.com/borkdude/clj-kondo/master/script/install-clj-kondo && \
