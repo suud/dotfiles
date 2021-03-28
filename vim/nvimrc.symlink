@@ -215,3 +215,8 @@ nnoremap <silent> ]B :blast<CR>
 " use ; to write : (;; for ;)
 map ; :
 noremap ;; ;
+" more convenient folding
+noremap zO zo
+noremap zo zO
+noremap zC zc
+noremap zc zC
