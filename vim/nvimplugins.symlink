@@ -14,6 +14,7 @@ Plug 'ncm2/float-preview.nvim' " completion preview window
 "" navigation
 Plug 'preservim/nerdtree' " <leader>e
 Plug 'preservim/tagbar' " <leader>t
+Plug 'easymotion/vim-easymotion'
 "" linting
 Plug 'w0rp/ale'
 "" git

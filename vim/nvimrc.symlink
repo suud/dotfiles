@@ -91,6 +91,9 @@ let g:ale_fixers = {
 " fix files when saving
 let g:ale_fix_on_save = 1
 
+" easymotion
+let g:EasyMotion_smartcase = 1
+
 
 " BASIC SETUP:
 
@@ -200,6 +203,8 @@ let maplocalleader = ","
 nnoremap <leader>t :TagbarToggle<CR>
 " NERDTree
 nnoremap <leader>e :NERDTreeToggle<CR>
+" s{char}{char} to move to {char}{char}
+nmap s <Plug>(easymotion-overwin-f2)
 " jump to buffer-number or last used buffer
 nnoremap <leader><leader> <c-^>
 " easier buffer navigation
