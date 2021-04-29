@@ -208,6 +208,8 @@ nnoremap <leader>t :TagbarToggle<CR>
 nnoremap <leader>e :NERDTreeToggle<CR>
 " connect conjure to shadow-cljs app
 nnoremap <leader>c :ConjureShadowSelect<Space>app
+" overwrite easymotion default leader to avoid conflicts with other mappings
+map <leader>s <Plug>(easymotion-prefix)
 " s{char}{char} to move to {char}{char}
 nmap s <Plug>(easymotion-overwin-f2)
 " jump to buffer-number or last used buffer
