@@ -214,6 +214,8 @@ map <leader>s <Plug>(easymotion-prefix)
 nmap s <Plug>(easymotion-overwin-f2)
 " jump to buffer-number or last used buffer
 nnoremap <leader><leader> <c-^>
+" indent whole file
+nnoremap <leader>i gg=G``zz
 " easier buffer navigation
 nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> ]b :bnext<CR>
