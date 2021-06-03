@@ -17,7 +17,8 @@ docker run -v /var/run/docker.sock:/var/run/docker.sock \
 #           --name <custom-name> \
 #           --hostname <custom-name> \
 #           -p 127.0.0.1:80:8080 \
-#           -p 127.0.0.1:9630:9630 \
+#           -p 127.0.0.1:8080:9630 \
+#           -p 127.0.0.1:8081:8081 \
            suud/dotfiles
 ```
 
@@ -42,7 +43,7 @@ docker run -it dotfiles:<custom-tag>
 ```
 
 
-## Components (stolen from [holman/dotfiles](https://github.com/holman/dotfiles))
+## Components (inspired by [holman/dotfiles](https://github.com/holman/dotfiles))
 
 There's a few special files in the hierarchy.
 
