@@ -62,6 +62,23 @@ let g:UltiSnipsJumpForwardTrigger       = "<c-j>"
 let g:UltiSnipsJumpBackwardTrigger      = "<c-k>"
 let g:UltiSnipsRemoveSelectModeMappings = 0
 
+" wrap existing omnifunc (to receive cljs autocompletions from conjure)
+"au User Ncm3Plugin call ncm2#register_source({
+"        \ 'name' : 'conjure',
+"        \ 'priority': 9,
+"        \ 'subscope_enable': 1,
+"        \ 'scope': ['clojure'],
+"        \ 'mark': 'clj',
+"        \ 'word_pattern': '[\w!$%&*+/:<=>?@\^_~\-\.#]+',
+"        \ 'complete_pattern': ['\.', '/' ':'],
+"        \ 'on_complete': ['ncm2#on_complete#omni', 'csscomplete#CompleteCSS'],
+""        \ 'on_complete': ['ncm2#on_complete#omni', {c -> ncm2#complete(c,
+""                \       c.startccol,
+""                \       ['on_complete-' . b:changedtick . '-' . c.startccol]
+""                \       )}],
+"        \ })
+"let g:coc_global_extensions = ['coc-conjure']
+
 "" float-preview
 let g:float_preview#docked = 1
 
